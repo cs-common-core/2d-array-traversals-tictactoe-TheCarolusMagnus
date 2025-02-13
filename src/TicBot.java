@@ -1,12 +1,12 @@
-public class TicTacToe {
+public class TicBot {
     private int[][] board; // 3x3 board, 0 for empty, 1 for X, 2 for O
     private int currentPlayer; // 1 for X, 2 for O
 
-    public TicTacToe() {
+    public TicBot() {
         board = new int[3][3];
         currentPlayer = 1;
     }
-
+    
     public void play(int row, int col) {
         if(board[row][col] != 0) {
             System.out.println("Cell already occupied");
