@@ -19,6 +19,10 @@ public class Play {
                 game.play(ro, co);
                 // your code here
             }
+            System.out.println("");
+            game.printBoard();
+            System.out.println("");
+            System.out.println("GAME OVER");
             scanner.close();
         }
         
@@ -35,10 +39,16 @@ public class Play {
                 System.out.println("Enter the Column");
                 int co = scanner.nextInt();
                 game.play(ro, co);
+
                 while( game.getCurrentPlayer() == 2){
-                    int ranNum1 = (int) (Math.random() * 2);
-                    int randNum2 = (int) (Math.random() * 2);
-                    game.play(ranNum1, randNum2);
+                    int ranNum1 = (int) (Math.random() * 3);
+                    int ranNum2 = (int) (Math.random() * 3);
+                    game.play(ranNum1, ranNum2);
+                    game.isGameOver();
+                    if (game.isGameOver() == true){
+                        game.printBoard();
+                        System.out.println("GAME OVER");
+                    }
                 }
                 // your code here
             }
